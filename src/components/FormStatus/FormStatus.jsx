@@ -1,7 +1,11 @@
 import React, {useEffect} from 'react';
+import './style.sass'
 import {useSelector, useDispatch} from "react-redux";
 import {setAllTtn, setInfo, setInfoThunk, setTtn} from '../../store/home/actions';
-
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 
 function FormStatus() {
     const {postNumber} = useSelector(state => state.list);
@@ -45,14 +49,27 @@ function FormStatus() {
 
 
     return (
-        <form style={{marginRight: '20px'}} onSubmit={e => submitForm(e)}>
-            <input type={'text'}
-                   style={{marginRight: '20px', marginBottom: '20px'}}
-                   onChange={e => inputValue(e)}
-                   value={postNumber}/>
-            <button type={"submit"} style={{marginRight: '20px'}}>Get Status TTN</button>
-            <button onClick={(e) => clearInput()}>Clear</button>
-        </form>
+        <Box
+            component="form"
+            noValidate
+            autoComplete="off"
+            onSubmit={e => submitForm(e)}
+            className="wrapper-form"
+        >
+            <TextField
+                type={'text'}
+                variant="outlined"
+                label="Введіть TTN"
+                onChange={e => inputValue(e)}
+                value={postNumber}
+                sx={{marginBottom:'15px', marginRight:'10px'}}
+            />
+
+            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+            <Button variant="contained" type={"submit"} >Перевірити</Button>
+            <Button variant="contained" onClick={(e) => clearInput()}>Очистити</Button>
+            </ButtonGroup>
+        </Box>
     );
 }
 

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import './style.sass'
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 
 function Header() {
     return (
-        <div>
-            <h1> Nova Poshta application</h1>
-            <div style={{ marginBottom: '20px' }}>
-                <a href={'/'} style={{marginRight: '20px' }}>Перевірити ТТН</a>
-                <a href={'/department'}>Список Відділень</a>
-            </div>
-        </div>
+        <Box className='header-wrapper'>
+            <Typography variant="h3" gutterBottom className='tittle'> Nova Poshta application</Typography>
+            <Box sx={{marginBottom: '20px'}}>
+                <Link href={'/'} style={{marginRight: '20px'}} underline="hover">Перевірити ТТН</Link>
+                <Link href={'/department'} underline="hover">Список Відділень</Link>
+            </Box>
+        </Box>
     );
 }
 

@@ -1,21 +1,23 @@
-import React from 'react';
-import style from './style.sass'
+import React,{Fragment} from 'react';
+import  './style.sass'
 import Header from "../../components/Header/Header";
 import FormStatus from "../../components/FormStatus/FormStatus";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import InfoBlock from "../../components/InfoBlock/InfoBlock";
+import Box from '@mui/material/Box';
 
 function HomePage(props) {
     return (
-        <div className={'home-wrapper'}>
+
+        <Fragment >
             <Header/>
             <FormStatus/>
-            <div className={'main-block'}>
+            <Box className={'main-block'}>
                 <InfoBlock/>
                 <Sidebar/>
-            </div>
+            </Box>
 
-        </div>
+        </Fragment>
     );
 }
 

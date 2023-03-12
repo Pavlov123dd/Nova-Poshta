@@ -1,6 +1,13 @@
 import React from 'react';
+import './style.sass'
 import {useDispatch, useSelector} from "react-redux";
 import {setAllTtn, setInfoThunk, setTtn} from "../../store/home/actions";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Sidebar() {
     const {allPostNumber} = useSelector(state => state.list);
@@ -20,25 +27,15 @@ function Sidebar() {
 
     return (
 
-        <div style={{
-            minHeight: '300px',
-            minWidth: '100px',
-            border: '1px',
-            borderStyle: "solid",
-            borderColor: '#000',
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            padding: '5px'
-        }}>
-            <p>Історія</p>
+        <Box  className="wrapper-sidebar">
+            <Typography variant="h6" gutterBottom>Історія</Typography>
             {allPostNumber.length > 0 ? (
-                <ul>
-                    {allPostNumber.map((item, i) => <li key={i} onClick={e => checkTtnSidebar(item, e)}>{item}</li>)}
-                </ul>
+                <List>
+                    {allPostNumber.map((item, i) => <ListItem sx={{paddingLeft:'2px'}} key={i} onClick={e => checkTtnSidebar(item, e)}>{item}</ListItem>)}
+                </List>
             ) : null}
-            <button onClick={() => clearMemoryTtn()}>Clear post number</button>
-        </div>
+            <Button variant="outlined" startIcon={<DeleteIcon />} onClick={() => clearMemoryTtn()}>Очистити</Button>
+        </Box>
 
     );
 }
