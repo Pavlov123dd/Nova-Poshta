@@ -1,4 +1,4 @@
-import {tracking} from "../../services/novaPoshtaServices";
+import {tracking} from "../../services/postNumberServices";
 
 
 export const ACTION_SET_INFO = 'ACTION_SET_INFO';

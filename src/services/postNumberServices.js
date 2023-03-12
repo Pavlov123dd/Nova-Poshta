@@ -7,8 +7,7 @@ const key = '95a364f77a918aa13c44580c0be8d932'
 
 
 export const tracking = (ttn) => axios.post(API, {
-    "apiKey":
-    key,
+    "apiKey": key,
     "modelName":
         "TrackingDocument",
     "calledMethod":

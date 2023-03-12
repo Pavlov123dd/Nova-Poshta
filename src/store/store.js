@@ -1,8 +1,8 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
 
 import list from './home/reducer'
-
-const rootReducer = combineReducers({list})
+import departmentInfo from './departament/reducer'
+const rootReducer = combineReducers({list, departmentInfo})
 
 const store = configureStore({
     reducer: rootReducer
