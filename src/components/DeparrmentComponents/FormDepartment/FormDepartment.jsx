@@ -32,7 +32,6 @@ function FormDepartment() {
         dispatch(setFilterDepartment(filterPostDepartment))
     }
 
-
     return (
         <Box className='box-wrapper'>
 
@@ -41,7 +40,7 @@ function FormDepartment() {
                 label="Введіть назву міста"
                 onChange={(e) => searchCity(e)}
                 onSelect={(item) => getDepartment(item.description)}
-                style={{maxWidth: '400px', marginBottom: '20px', color:'#2979ff'}}
+                style={{maxWidth: '400px', marginBottom: '20px', color: '#2979ff'}}
 
                 items={
                     allSearchCity.map((item, i) => {
@@ -52,7 +51,8 @@ function FormDepartment() {
 
             {postDepartment.length > 0 ? (
                 <Fragment>
-                    <Typography variant="button" display="block" gutterBottom sx={{color:'#2979ff'}}>Виберіть тип відділення</Typography>
+                    <Typography variant="button" display="block" gutterBottom sx={{color: '#2979ff'}}>Виберіть тип
+                        відділення</Typography>
                     <Select onChange={e => selectValue(e)} defaultValue='all'
                             style={{marginBottom: '20px'}}
                             labelId="demo-simple-select-label"
@@ -66,7 +66,7 @@ function FormDepartment() {
                     <DatalistInput
                         placeholder="номер відділеня або вулиця"
                         label="Натисніть та введіть відділення"
-                        style={{maxWidth: '400px',color:'#2979ff'}}
+                        style={{maxWidth: '400px', color: '#2979ff'}}
                         items={
                             filterPostDepartment.map((item, i) => {
                                 return {id: i, value: item.Description}
